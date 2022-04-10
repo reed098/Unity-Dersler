@@ -1,0 +1,35 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+//yorum satırlarıdır. Bunlar derlenmez. Sadece kod yazanın yazdığı kodu neden yazdığını açıkladığı satırdır.
+
+public class Deneme : MonoBehaviour
+{
+    RaycastHit dusman1; //dusman1 adında RaycastHit değişkenimizi tanımlıyoruz.
+    void Start()
+    {
+
+    }
+
+
+    void Update()
+    {
+        if (Physics.Raycast(transform.position, transform.forward, out dusman1, 2.0f))
+        //if (Physics.Raycast(transform.position, new Vector3(0,0,1), out dusman1, 2.0f))   //böyle de kullanılabilirdi.
+        {
+            if (dusman1.collider != null)
+            //if(dusman1.collider.gameObject.tag == "dusman")  //böyle de kullanılabilirdi.
+            {
+                dusman1.collider.gameObject.SetActive(false); //dusman1 objesi hangi nesneye çarparsa o nesne görünmez olacak.
+                Debug.Log(dusman1.distance); //dusman1 objesi bir nesneye çarptığında o nesneye olan yakınlığını yazacak.
+                
+                //dusman1.collider.gameObject.GetComponent<MeshRenderer>().enabled = false; //çarptığında çarpılan nesnenenin mesh rendereri kapancak.
+                //Destroy(dusman1.collider.gameObject);  //çarptığında çarpılan nesne yok olacak.
+            }
+        }
+        
+        
+
+    }
+}
