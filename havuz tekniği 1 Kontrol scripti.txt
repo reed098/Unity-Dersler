@@ -1,0 +1,46 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Oyun : MonoBehaviour
+{
+
+    public GameObject oyuncu;
+    List <GameObject> nesne;
+    public float nesneSayisi;
+
+    void Start()
+    {
+        nesne = new List<GameObject>();
+
+        for (int i = 0; i < 10; i++)
+        {
+            nesne.Add(Instantiate(oyuncu));
+            nesne[i].SetActive(false);
+        }
+        InvokeRepeating("ekle", 0, nesneSayisi);
+    }
+
+
+    void Update()
+    {
+        
+    }
+
+    void ekle()
+    {
+        foreach (GameObject n in nesne)
+        {
+            if (n.activeSelf == false)
+            {
+                n.SetActive(true);
+                float Xdeger = Random.Range(-4.5f, 4.5f);
+                float Zdeger = Random.Range(-4.5f, 4.5f);
+                n.transform.position = new Vector3(Xdeger, 5, Zdeger);
+                return;
+            }
+        }
+    }
+
+
+}
