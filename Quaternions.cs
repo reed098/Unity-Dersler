@@ -1,80 +1,53 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
-public class Deneme : MonoBehaviour
-{
-
-    public Transform target;
-
-    float t = 0.2f;
-    
-    void Start()
-    {
-
-    }
-
-
-    void Update()
-    {
-        //Quaternion.Euler //bir nesneyi istediğimiz derecede döndürmeyi sağlıyor.
-        transform.rotation = Quaternion.Euler(0, 90, 0); // Nesneyi y ekseninde 90 derece döndürdük.
-                                                 //quaternion.euler local da farklı olarak nesneyi döndürebilir. Eğer farklılık oluyorsa globale çevir.
-        //-------------------------------------------------------------------------------------------------------
-        //Quaternion.identity //olduğu gibi bırak demek. Değerleri değiştirme, nasıl kayıt edilmişse öyle kullan demek.
+        //Quaternion.Euler //bir nesneyi istediÄŸimiz derecede dÃ¶ndÃ¼rmeyi saÄŸlar.
+        transform.rotation = Quaternion.Euler(0, 90, 0); // Nesneyi y ekseninde 90 derece dÃ¶ndÃ¼rdÃ¼k.
+        //quaternion.euler local da farklÄ± olarak nesneyi dÃ¶ndÃ¼rebilir. eÄŸer farklÄ±lÄ±k oluyorsa globale Ã§evir.
+--------------------------------------------------------------------------------------------------------
+        //Quaternion.identity //olduÄŸu gibi bÄ±rak demek. DeÄŸerleri deÄŸiÅŸtirme, nasÄ±l kayÄ±t edilmiÅŸse Ã¶yle kullan demek.
         transform.rotation = Quaternion.identity;
-        //--------------------------------------------------------------------------------------------------------
-        //Quaternion.Inverse //rotationu ters çevirir
-        transform.rotation = Quaternion.Inverse(Quaternion.Euler(0, 90, 0)); //yazılan değerleri tersine çevirir yani -90 olarak çevirecek.
-        //-----------------------------------------------------------------------------------------------------------------------------------
-        //Quaternion.Lerp // İki değer arasında 
-        t = Mathf.PingPong(0.2f * Time.time, 1f);//0.2f hızında nesne y ekseninde 90 ile -90 arasında durmadan dönecek.
-        transform.rotation = Quaternion.Lerp(Quaternion.Euler(0, 90, 0), Quaternion.Euler(0, -90, 0), t);//t değeri 0 ile 1 arasında değer alır.
-                                                                                                         //slerp e göre daha hızlıdır.Ancak rotasyonlar birbirinden çok uzaktaysa kötü görünür.
-        //-------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------
+        //Quaternion.Inverse //rotationu ters Ã§evirir
+        transform.rotation = Quaternion.Inverse(Quaternion.Euler(0, 90, 0)); //yazÄ±lan deÄŸerleri tersine Ã§evirir yani -90 olarak Ã§evirecek.
+------------------------------------------------------------------------------------------------------------------------------------
+        //Quaternion.Lerp // iki deÃ°er arasÃ½nda 
+        t = Mathf.PingPong(0.2f * Time.time, 1f);//0.2f hÄ±zÄ±nda nesne y ekseninde 90 ile -90 arasÄ±nda durmadan dÃ¶necek.
+        transform.rotation = Quaternion.Lerp(Quaternion.Euler(0, 90, 0), Quaternion.Euler(0, -90, 0), t);//t deÄŸeri 0 ile 1 arasÄ±nda deÄŸer alÄ±r.
+        //slerp e gÃ¶re daha hÄ±zlÄ±dÄ±r.Ancak rotasyonlar birbirinden Ã§ok uzaktaysa kÃ¶tÃ¼ gÃ¶rÃ¼nÃ¼r.
+--------------------------------------------------------------------------------------------------------------------------------------
         //Quaternion.slerp
 
-        t = Mathf.PingPong(Time.time* 0.2f, 1); //mathf.pingpong ile nesne 0.2f hızında y ekseninde 45 ile 90 derece arasında gidip gelecek.
-        transform.rotation = Quaternion.Slerp(Quaternion.Euler(0,45,0), Quaternion.Euler(0,90,0), t);//t değeri 0 ile 1 arasında değer alır.
-        //-------------------------------------------------------------------------------------------------------
+        t = Mathf.PingPong(Time.time* 0.2f, 1); //mathf.pingpong ile nesne 0.2f hÄ±zÄ±nda y ekseninde 45 ile 90 derece arsÄ±nda gidip gelecek.
+        transform.rotation = Quaternion.Slerp(Quaternion.Euler(0,45,0), Quaternion.Euler(0,90,0), t);//t deÄŸeri 0 ile 1 arasÃ½nda deÄŸer alÄ±r.
+-------------------------------------------------------------------------------------------------------
         //Quaternion.LookRotation
 
         //LookAt kodu gibi
 
         Vector3 direction = target.position - transform.position; //aradaki mesafeyi belirledik.
 
-        transform.rotation = Quaternion.LookRotation(direction); //target nereye giderse nesnemizin z yönü oraya dönecek.
+        transform.rotation = Quaternion.LookRotation(direction); //target nereye giderse nesnemizin z yÃ¶nÃ¼ oraya dÃ¶necek.
 
-        //transform.rotation = Quaternion.LookRotation(target.position - transform.position); //veya böyle de kullanılabilir.
+        //transform.rotation = Quaternion.LookRotation(target.position - transform.position); //veya bÃ¶yle de kullanÄ±labilir.
 
-        //-------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------
         //Quaternion.RotateTowards
 
         transform.rotation = Quaternion.RotateTowards(transform.rotation, target.rotation, t);
-        //target nesnemiz nereye dönerse bizim nesnemiz de o yöne t değerindeki hız kadar hızlı dönecek.
+        //target nesnemiz nereye dÃ¶nerse bizim nesnemiz de o yÃ¶ne t deÄŸerindeki hÄ±z kadar hÄ±zlÄ± dÃ¶necek.
 
         transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(90,0,0),t);
-        //böyle de kullanılabilir. istediğimiz yöne tek seferlik x yönüne 90 derece dönecektir.
+        //bÃ¶yle de kullanÄ±labilir. istediÄŸimiz yÃ¶ne tek seferlik x yÃ¶nÃ¼ne 90 derece dÃ¶necektir.
 
         transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Inverse(Quaternion.Euler(90,0,0)),t);
-        //üstteki kodun tam tersidir. Üstteki kod tek seferlik olduğu için başlangıç yönüne döndürmek için bunu kullanabiliriz.
-        //---------------------------------------------------------------------------------------------------------
+        //Ã¼stteki kodun tam tersidir. Ãœstteki kod tek seferlik olguÄŸu iÃ§in baÅŸlangÄ±Ã§ yÃ¶nÃ¼ne dÃ¶ndÃ¼rmek iÃ§in bunu kullanabiliriz.
+----------------------------------------------------------------------------------------------------------
         //Quaternion.FromToRotation
 
         transform.rotation = Quaternion.FromToRotation(transform.up, transform.right);
-        //bu kod nesnenin eksenlerini istenilen yönde çeviriyor.
-        //-------------------------------------------------------------------------------------------------------------
-        //Quaternion.Angel //İki değer arasındaki rotation farkını verir bize
+        //bu kod nesnenin eksenlerini istenilen yÃ¶nde Ã§eviriyor.
+--------------------------------------------------------------------------------------------------------------
+        //Quaternion.Angel //iki deÄŸer arasÄ±ndaki rotation farkÄ±nÄ± verir bize
         float angle = Quaternion.Angle(transform.rotation, target.rotation);
-        //-------------------------------------------------------------------------------------------------------------
-        //Quaternion.AngelAxis //vector3 türünde nesneyi belli bir yönde döndürür.
-        transform.rotation =  Quaternion.AngleAxis(45f, transform.up);// y ekseninde nesneyi 45 derece döndürmesini söyledik.
-
-
-
-
-
-}
-
-
-}
+--------------------------------------------------------------------------------------------------------------
+        //Quaternion.AngelAxis //vector3 tÃ¼rÃ¼nde nesneyi belli bir yÃ¶nde dÃ¶ndÃ¼rÃ¼r.
+        transform.rotation =  Quaternion.AngleAxis(45f, transform.up);// y ekseninde nesneyi 45 derece dÃ¶ndÃ¼rmesini sÃ¶yledik.
