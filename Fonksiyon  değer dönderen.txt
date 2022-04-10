@@ -1,0 +1,32 @@
+        
+    int sonuc;
+
+    void Start()
+    {
+		Notlar(20, 40, 90);
+        print("Ahmetin Notu :" + sonuc);
+        Notlar(60, 80, 30);
+        print("Ayşenin Notu : " + sonuc);
+    }
+
+    
+
+    void Notlar(int sayi1, int sayi2, int sayi3)
+    {
+        sonuc = (sayi1 + sayi2 + sayi3) / 3;       
+    }
+	
+-------------------------------------------------------------------	
+   void Start()
+    {
+		Notlar(20, 40, 90);
+        Notlar(60, 80, 30);
+    }
+
+    
+
+    void Notlar(int sayi1, int sayi2, int sayi3)
+    {
+        sonuc = (sayi1 + sayi2 + sayi3) / 3;
+		print(sonuc);		
+    }

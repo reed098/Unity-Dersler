@@ -1,0 +1,19 @@
+public Transform kure;
+float hiz = 10.0f;
+
+void Update(){
+
+
+	transform.position = Vector3.Lerp(transform.position, kure.position, Time.deltatime); //Vector3 Lerp(başlangıç değeri,bitiş değeri,hız); 
+
+}
+
+*************************************************************************************************************************************************
+
+void Update() {
+	
+	
+	transform.position = Vector3.MoveTowards(transform.position,kure.position,Time.deltatime,hiz); //Hızlı geçiş. 
+	
+}
+// Vector3.Lerp ve M,Vector3.MoveTowards arasındaki tek fark Lerp yumuşak geçiş sunuyor. MoveTowards ise hiç yavaşlamadan geçiş.

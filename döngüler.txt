@@ -1,0 +1,81 @@
+//1. while 
+//2. do while 
+//3. for 
+//4. foreach 
+
+
+----------------------------------------------
+while döngüsü
+// while şart sağlandığı sürece çalışır.Şart hiç sağlanmazsa hiç çalışmaz döngüye girmez.
+int index = 0;
+while (index < 10) //index'in değeri 10'dan küçük  olduğu sürece bu döngü çalışır. 0' dan başladığı için 10 kere çalışacak.
+{
+   Debug.Log("bir işlem oldu");
+   index++;  //verimizi arttırmazsak index 0 kalacağı için sonsuz döngüye girecektir.
+
+}
+-----------------------------------------------
+do while döngüsü 
+//Şart sağlansın veya sağlnamasın en az bir kere çalışır.
+
+do 
+{
+   Debug.Log("en az 1 kere döngüye girecek");
+}while (false);  //şart false olduğu halde yani sağlanmadığı halde 1 kere çalışacak.
+
+------------------------------------------------
+for döngüsü
+
+for (int i = 0 	; i < 10; i++)  //0 dan başlayacak i değeri 10 a ulaşana kadar i yi arttıracak. 10 kere çalışacak.
+{
+   Debug.Log("işlem gerçekleşti");
+}
+
+------------------------------------------------
+foreach döngüsü  //genellikle dizi ve listlerde kullanılır.
+//collection yazdığı yerde bizden dizi veya list ister.
+//dizi veya list içindeki değer kadar çalışır.
+
+foreach(var item in collection)
+{
+
+}
+-------------------------------------------------
+break yapısı
+//döngüden çık anlamına gelir
+
+for(int i = 0; i < 10; i++)
+{
+   if(i > 2)
+   {
+     break;  //normalde döngü 10 kere çalışacaktı ama break komutuyla i 2'den büyük olana kadar çalışacak. Yani 3 kere çalışacak.
+   }
+   Debug.Log(i);
+}
+-------------------------------------------------
+continue yapısı
+//döngüye devam et anlamındadır.
+for(int i = =, i < 10; i++)
+{
+   if(i == 2)
+   {
+     continue;  //i 2 ye eşit olunca döngüyü pas geçecek ve devam edecek.Konsola normalde 10 kere yazılacaktı ancak 2. döngü yazılmadığı için 9 kere yazılacak.
+   }
+   Debug.Log(i);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

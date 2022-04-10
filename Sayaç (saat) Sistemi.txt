@@ -1,0 +1,11 @@
+
+
+public Text sayacText;
+public float saniye ; 
+
+void Update() {
+	
+	saniye += Time.deltaTime;
+	sayacText.text = Mathf.RoundToInt(saniye).ToString("D2");
+	//sayacText.text = saniye.ToString();                           // ikinci yöntem
+}

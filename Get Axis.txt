@@ -1,0 +1,21 @@
+float hiz = 50.0f;
+
+
+void Update(){
+	
+	
+	float sagsol = Input.GetAxis("Horizontal") * Time.deltatime * hiz;
+	float yukari = Input.GetAxis("Vertical") * Time.deltatime * hiz;
+	
+	transfrom.Translate(sagsol,0,yukari);
+	
+************************************************************************************************
+	
+	float farex = Input.GetAxis("Mouse X") * Time.deltatime * hiz;
+	float farey = Input.GetAxis("Mouse Y") * Time.deltatime * hiz;
+	
+	transfrom.Translate(farex, 0 , farey);
+	
+	
+	
+}

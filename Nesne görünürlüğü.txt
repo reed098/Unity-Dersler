@@ -1,0 +1,10 @@
+nesne.gameObject.GetComponent<MeshRenderer>().enabled = false;
+
+
+
+Destroy(nesne);
+//Destroy(nesne.collider.gameObject);
+
+nesne.gameObject.SetActive(false);
+
+

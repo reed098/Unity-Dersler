@@ -1,0 +1,58 @@
+Mantık Operatörleri
+
+&&  ve
+||  veya
+
+---------------------------------
+Ternary If Değişkeni // Kısa if Else yazımı
+//soru işaretinden önce şart yazılır, sonra if/else içeriği yazılır.
+
+Debug.Log(booldegisken ? "true döndü" : "false döndü");
+
+---------------------------------
+If işlemleri
+
+[SerializeField]   // globalde yazılmıştır. public yapısına benzer.  //public string gun;  aynısıdır.
+string gun;
+
+if(gun == "pazartesi")
+{
+  Debug.Log("seçili gün pazartesi");
+}
+else if(gun == "salı")
+{
+  Debug.Log("seçili gün salı");
+}
+else if(gun == "çarşamba")
+{
+  Debug.Log("seçili gün çarşamba");
+}
+else   // hiç bir şart sağlanmadıysa bu devreye girer.
+{
+  Debug.Log("hiç bir şart sağlanamadı.");
+}
+
+------------------------------------
+
+Switch case işlemleri
+
+[SerializeField]      
+string gun;
+
+switch (gun) 
+{
+   case "pazartesi": //sonuna iki nokta üst üste konulur.
+         //şart true ise case ve break arasındaki kodları çalıştırır.
+	Debug.Log("seçili gün pazartesi");
+        break;
+   case "salı":
+        Debug.Log("seçili gün salı")
+        break;
+   case "çarşamba":
+        Debug.Log("seçili gün çarşamba");
+        break;
+   default:   //if deki else yapısı hiç bir şart sağlanmadıysa bu devreye girer
+        Debug.Log("hiç bir şart sağlanamadı.");
+        break;
+
+}

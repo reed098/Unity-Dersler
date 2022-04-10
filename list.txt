@@ -1,0 +1,56 @@
+ List kullanımı
+
+ List<int> numbers = new List<int>();
+  numbers.Add(5);
+  numbers.Add(8);
+  numbers.Add(2);
+  numbers.Add(4);
+
+--------------------------------------------------------------
+
+ //dizilerde  .Length   listlerde ise .Count olarak eleman sayısı kadar çalıştırabiliriz
+ for(int i = 0; i < numbers.Count; i++)
+ { 
+  Debug.Log(numbers[i]);
+ }
+
+--------------------------------------------------------------
+
+ foreach(int sayi in numbers)
+ {
+  Debug.Log(number);
+ }
+
+----------------------------------------------------------
+
+ List kısa yazımı
+
+ List<int> numbers = New List<int>
+ {
+  10,3,8,21
+ };
+
+------------------------------------------------------------
+ Rastgele List İçindeki nesneleri yazdırma
+
+    List<string> gunler;
+    String randomWorld;
+
+    void Start()
+    {
+        gunler = new List<string>
+        {"pazartesi", "salı", "çarşamba", "perşembe", "cuma", "cumartesi", "pazar"};
+     }
+
+    
+    void Update()
+    {
+      int setIndex = Random.Range(0, gunler.Count);  //rastgele 0 dan listing içindeki nesne sayısı kadar değeri setIndex e atıyoruz.
+      string randomWorld = gunler[setIndex];  //gunler list e parametre olarak setIndex i veriyoruz. İçindeki rastgele list nesne sayısı var.
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            Debug.Log(randomWorld);
+        }
+        
+    }

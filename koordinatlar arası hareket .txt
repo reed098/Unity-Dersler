@@ -1,0 +1,22 @@
+//bu scriptin bağlı oldu nesne kutu adlı nesneye doğru hareket edecek.
+
+private GameObject kutu;
+
+float hiz = 10.0f;
+
+Vector3 bitis;
+
+void Start() {
+	
+	bitis = kutu.transform.position;	
+}
+
+void Update() {
+	
+	//Vector3.Lerp yumuşak başlangıç ve bitiş sağlar. Bitiş yerine gelince yavaşça durur.
+	gameObject.transform.position = Vector3.Lerp(gameObject.transform.position,kutu,hiz * Time.deltaTime);
+	
+	//Vector3.MoveTowards sert başlangıç ve bitiş sağlar. Hangi hızda başladıysa bitiş yerine gelince aniden durur.
+	gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position,kutu,hiz * Time.deltaTime);
+	
+}

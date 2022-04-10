@@ -1,0 +1,4 @@
+// Unityde bir public değişkenin üstüne geldiği zaman Inspector alanında scroll bar yapar.
+
+[Range(0,1)] //Inspector alanında 0 ile 1 arasında bir scrollbar yapar.
+public float deger;

@@ -1,0 +1,25 @@
+int sayi ;
+
+void Start () { 
+
+
+sayi = Random.Range(0,100);           // Oyun her başlatıldığında 0 dan 100 arasında rastgele sayı üretilip "sayi" değişkenine atanacak.
+
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+if (Input.GetMouseButtonDown(0))//rastgele objelerden biri seçilecek ve seçilen küp 1 birim ilerleyecek ve konsola ismi yazdıralacak.
+        {
+            int rast = Random.Range(0, 3); //3 objemiz olduğu için rastgele 0 ile 3 arası bir sayi belirledik ve değişkenin içine attık.
+            GameObject yeni = kuplerim[rast]; //küplerim dizisine rastgele seçilecek sayıyı attık.Bu sayıya göre dizi içindeki rastgele eleman seçilecek.
+            yeni.transform.Translate(0, 0, 100 * Time.deltaTime); //Rastgele seçilen nesneye z yönünde hız ekledik.
+            if(rast == 0)
+            {
+                Debug.Log("Mavi Küp Hareket Etti.");
+            }else if(rast == 1) {
+                Debug.Log("Kırmızı Küp Hareket Etti.");
+            }else if(rast == 2)
+            {
+                Debug.Log("Sarı Küp Hareket Etti.");
+            }

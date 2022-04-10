@@ -1,0 +1,26 @@
+
+
+start()
+{
+   //method5 tüm sayıları toplayacaktı. Aşağıda start ile çağırıp sayıları girdik ve topladı.
+   method5(10,17,9,7,16,4,3,1,3);  //toplamı 70.
+
+}
+
+
+
+//params tam bilemediğimiz, tahmin edemediğimiz parametrelerde kullanırız.
+//params ile biz bu metotda 1 tanede int tipinde sayı gelir 10 tane de gelebilir demiş olduk.
+void method5(params int[] number)
+{
+  int sonuc = 0;
+
+  foreach(int number in number)
+  {
+   //gelen sayıları sonuc değişkenine atıp durmadan toplayacak.
+    sonuc += number;
+
+  }
+
+  Debug.Log(sonuc);
+}

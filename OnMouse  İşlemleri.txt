@@ -1,0 +1,1 @@
+OnMouse fonksiyonları tıklanacak nesne üzerine script oluşturulur. Başka bir scriptten erişim olmaz.

@@ -1,0 +1,27 @@
+public Rigidbody myrigi;
+float hiz = 50.0f;
+
+
+void Update() {
+	
+	float yatay = Input.GetAxis("Horizontal");  // Klavyenin sağ-sol yön tuşlarını "yatay" değişkenine eşitledik.
+	float ileri = Input.GetAxis("Vertical");    // Klavyenin yukarı-aşağı(ileri-geri) yön tuşlarını "ileri" değikenine eşitledik
+	
+	
+	// 1. Yöntem  rigidbody e etki ederek hız verme
+	myrigi.velocity = new Vector3(yatay * hiz * Time.deltatime, 0 , ileri * hiz * Time.deltatime);
+	//"x" (sağ-sol) yönüne yatay değikenini verdik. 
+	//"y" (aşağı-yukarı) yönünü 0 bıraktık.
+	//"z" (ileri) yönüne "ileri" değişkenini verdik.
+	
+	
+	*************************************************************
+	
+	
+	// 2. Yöntem transform ayarlarına etki ederek hız verme
+	transform.Translate(yatay * hiz * Time.deltatime, 0 , ileri * hiz* Time.deltatime);
+	
+	
+	
+	
+}

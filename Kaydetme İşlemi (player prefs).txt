@@ -1,0 +1,71 @@
+int skor = 0 ; 
+public Text text; 
+
+void Start(){
+	
+	skor = PlayerPrefs.GetInt("Skor");         //Oyun her açıldığında aşağıda kaydettiğimiz skoru çağırıyoruz.
+	text.text = skor + "";					   //Oyun her açıldığında skoru texe eşitliyoruz.
+	
+	
+	if(PlayerPrefs.Haskey("Skor") == true      //Verinin olup olmadığını kontrol etmek için.
+	{ 
+	Debug.Log("veri kayıtlı");
+	}
+	else 
+	{
+	Debug.Log("veri yok");
+	}	
+}
+
+public void PuanVer(){                           //bu fonksiyonu butona atadık.
+	
+	skor += 10;                                //butona her basıldığında skor değişkenini "10" arttırıyoruz.
+	PlayerPrefs.SetInt ("Skor", skor);         //butona her basıldığında skor değişkenini kaydediyoruz.
+	text.text = skor + "";                     //butona her basıldığında skor değikenini texe eşitliyoruz.
+	
+}
+**********************************************************************************************************************************************************
+
+
+void Start() { 
+
+
+	if(PlayerPrefs.Haskey("X")){                               //X adında kayıt varsa diye butona basılmışmı diye kontrol ediyoruz.
+		
+		float Xduzlemi = PlayerPrefs.GetFloat("X");             //Aşağıda kayıt ettiğimiz değerleri getiriyoruz ve değikene atıyoruz.
+		float Yduzlemi = PlayerPrefs.GetFloat("Y");
+		float Zduzlemi = PlayerPrefs.GetFloat("Z");
+		
+		transform.position = new Vector3(Xduzlemi,Yduzlemi,Zduzlemi);   //kayıt ettiğimiz değerleri nesnenin pozisyonuna eşitliyoruz.
+	}
+
+}
+	
+
+
+public void oyunu_kaydet(){                                //fonksiyonu butona bağladık.
+	
+	PlayerPrefs.SetFloat("X", transform.position.x);       //butona her basıldığında Scriptin bağlı olduğu nesnenin "x" yönünü kayıt edecek.
+	PlayerPrefs.SetFloat("Y", transform.position.y); 	   //butona her basıldığında Scriptin bağlı olduğu nesnenin "y" yönünü kayıt edecek.
+	PlayerPrefs.SetFloat("Z", transform.position.z);       //butona her basıldığında Scriptin bağlı olduğu nesnenin "z" yönünü kayıt edecek.
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

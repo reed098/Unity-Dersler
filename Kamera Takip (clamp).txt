@@ -1,0 +1,24 @@
+
+    public GameObject target;   //takip edilecek nesne
+    float mesafe; 
+    float y;
+    void Start()
+    {
+        mesafe = transform.position.x - target.transform.position.x; 
+		// kameranın x ini hedef in x pozisyonundan çıkarıyoruz ve ikisinin arasındaki mesafeyi buluyoruz.
+
+        y = Mathf.Clamp(target.transform.position.y,0, 0); 
+		//y yönünde kamera olduğu gibi kalsın dedik. Hedef y yönünde hareket etse bile kamera takip etmeyecek.
+		//Sadece x yönünde takip etmesini istediğimiz için yaptım.
+    }
+
+    
+    void Update()
+    {
+        
+        transform.position = new Vector3(target.transform.position.x + mesafe, y, transform.position.z);
+		//hedefin x pozisyonunuyla oyun başladığında bulduğumuz mesafeyi topluyoruz.
+		//y yönüne mathf.clamp yaptığımız y yi koyuyoruz.
+		//z yönünü olduğu gibi bırak diyoruz.
+
+    }

@@ -1,0 +1,22 @@
+public class uc : MonoBehaviour
+{
+    //set'i private yaptık dışardan referans almasın diye. Awake metodunda 1 kere alacak Instance referansını daha almayacak.
+    //get in matığına içerideki referansı dışarıda kullanmak için
+    public static uc Instance { get; private set; }
+
+
+    private void Awake()
+    {
+        if (Instance == null) //null u atadık. Daha önce Insatance hiç kullanılmadıysa demiş olduk.
+        {
+            Instance = this; // class ın referansı Instance ye vermiş olduk.
+            DontDestroyOnLoad(this.gameObject); //bu gameobjeck i de yok etme.
+        }else
+        {
+            Destroy(this.gameObject); //eğer ikinci bir nesne varsa bu gameobject i yok et.
+        }
+
+    }
+
+
+}

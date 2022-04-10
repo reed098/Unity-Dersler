@@ -1,0 +1,9 @@
+   float _atesEtmeZamani = 0f; 
+
+       if (Input.GetMouseButtonDown(0) && Time.time>_atesEtmeZamani) //ne kadar basarsak basalım 1 saniyede bir ateş edecek.
+        {
+            _atesEtmeZamani = Time.time + 1;
+            GameObject _yaratilanNesne = Instantiate(Kursunum, transform.position, Quaternion.Euler(0, 0, -90));
+            _yaratilanNesne.GetComponent<Rigidbody2D>().velocity = new Vector2(kursunGitmeGucu * Time.deltaTime, 0);
+
+        }

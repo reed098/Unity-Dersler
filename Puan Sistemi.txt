@@ -1,0 +1,25 @@
+public Text yazi;
+public int puan;
+
+
+void start() {
+	
+	
+	yazi.text = puan.ToString();         //puan değişkenini yazi texine eşitledik.
+	//veya
+        //yazi.text = "Score : " + puan;
+
+	
+}
+
+void OnTriggerEnter(Collider other) {
+	
+	
+	if(other.gameobject.tag == "cikis") {
+		
+		puan++;
+		yazi.text = puan.ToString(); //her çapışmada yine puan değişkenini yazi texine eşitliyoruz.
+                //veya
+                //yazi.text = "Score : " + puan;
+	}
+}

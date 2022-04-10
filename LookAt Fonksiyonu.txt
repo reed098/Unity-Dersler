@@ -1,0 +1,20 @@
+public Transform oyuncu;
+
+Rigidbody myrigi;
+
+
+void Start(){
+	
+	myrigi = GetComponent<Rigidbody>();
+}
+
+void Update() {
+	
+	
+	
+	transform.LookAt(oyuncu)
+	
+	myrigi.velocity = transform.forward * 50.0f * Time.deltatime;	
+	//50.0f hızında oyuncu nesnesine doğru sabit hızda gidecek.
+	
+}

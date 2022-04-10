@@ -1,0 +1,26 @@
+//tek seferlik güç uygulama
+//başlangıçta bool true olarak ekledik. Fonksiyonu yaptıktan sonra bool fonksiyonunu false olarak değiştirdik.
+//1 kere çalıştıktan sonra bool fonksiyonu false olacağı için if bir daha çalışmayacak.
+
+   float guc = 500.0f;
+   Rigidbody rigi;
+   bool kes = true;
+
+    void Start()
+    {
+        rigi = GetComponent<Rigidbody>();
+
+    }
+
+    void Update()
+    {
+        if (kes)
+        {
+            if (sayi == 5)
+           {
+            rigi.AddForce(transform.up * guc);
+                kes = false;
+           }
+        }
+
+    }

@@ -1,0 +1,18 @@
+private Gameobject nesne;
+
+
+void Start()
+{
+  nesne = Gameobject.Find("silindir");
+  //veya
+  nesne = Gameobject.tag("silindirtag");
+  //veya
+  Gameobject.Find("obje")GetComponent<MeshRenderer>().enabled = false;
+  //veya
+  Scriptim = Object.FindObjectOfType<sScriptNesnesi>();
+  //veya
+  _altinObj = GameObject.FindGameObjectWithTag("carpma");
+  //veya isimle bulma
+  rb = GameObject.Find("kursun").GetComponent<Rigidbody2D>();
+  
+}
