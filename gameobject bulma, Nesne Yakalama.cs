@@ -4,15 +4,21 @@ private Gameobject nesne;
 void Start()
 {
   nesne = Gameobject.Find("silindir");
-  //veya
+  //Objeyi ismiyle bulduk
+  
   nesne = Gameobject.tag("silindirtag");
-  //veya
+  //Objeyi tagıyla bulduk
+  
   Gameobject.Find("obje")GetComponent<MeshRenderer>().enabled = false;
-  //veya
+  //Objeyi ismiyle bulduk ve ardından get componetine erişip işlem yaptık.
+  
   Scriptim = Object.FindObjectOfType<sScriptNesnesi>();
-  //veya
+  //Scripti böyle bulabiliriz.
+  
   _altinObj = GameObject.FindGameObjectWithTag("carpma");
-  //veya isimle bulma
+  //objeyi tagıyla bulduk ve değikene atadık.
+  
   rb = GameObject.Find("kursun").GetComponent<Rigidbody2D>();
+  //objenin içindeki rigidbodysine eriştik ve atadık.
   
 }
