@@ -1,5 +1,5 @@
 Sahne değiştirme 		      : SceneManager.LoadScene ( SceneManager.GetActiveScene().buildIndex);
-Bir sonraki sahneye geçme     : SceneManager.LoadScene ( SceneManager.GetActiveScene().buildIndex + 1);
+Bir sonraki sahneye geçme             : SceneManager.LoadScene ( SceneManager.GetActiveScene().buildIndex + 1);
 değilse ..... yap "if" metodu : if(ilkKod =! ikinciKod)  =!   işaretinin anlamı "değilse" demektir.
 Invoke("fonksiyon_adı", 1.0f);    -------- Bir fonksiyonu belli bir saniye sonra 1 kez çalıştırabiliriz . Start Fonkisyonuna yazılır.
 InvokeRepeating("fonksiyon_adı" , 1.0f, 5.0f);  Oyun başladıktan 1 saniye sonra başlıyor. 5 saniye aralıklarla devam ediyor.Start Fonkisyonuna yazılır.
