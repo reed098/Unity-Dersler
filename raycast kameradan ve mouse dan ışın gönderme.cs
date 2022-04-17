@@ -1,4 +1,4 @@
-   RaycastHit dusman1;
+   RaycastHit Nesne;
    
     void Start()
     {
@@ -15,11 +15,11 @@
         Ray isik_yolla = GameObject.Find("Main Camera").GetComponent<Camera>().ScreenPointToRay(Input.mousePosition);
 		//mouse pozisyonunu ray değişkenine atadık.
 
-        if(Physics.Raycast(isik_yolla, out dusman1)) 
+        if(Physics.Raycast(isik_yolla, out Nesne)) 
         {
-            if(dusman1.collider != null)  //bir nesneye çarptıysa
+            if(Nesne.collider != null)  //ışık bir objeye çarptıysa, boş değilse demektir.
             {
-                Debug.Log(dusman1.collider.name);
+                Debug.Log(Nesne.collider.name); //Işığın çarptığı objenin ismini konsola yazdırıyoruz.
             }
         }  
     }
